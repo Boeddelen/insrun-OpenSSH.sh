@@ -6,14 +6,16 @@
 
 user=$(whoami)
 
-echo "Hello, user. This program will install the latest version of OpenSSH and if fully completed, make you able to SSH into the desired endpoint."
+echo "This program will install the latest version of OpenSSH and if fully completed, make you able to SSH into the desired endpoint."
 sleep 1
 sudo dnf install openssh
 sudo dnf install openssh-server
 sudo systemctl start sshd
 sudo systemctl status sshd
+
 break
 sleep 1
+
 echo "Your IP address is. Do not use the loopback address"
 ip address | grep "inet "
 
